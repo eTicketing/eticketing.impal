@@ -1,0 +1,56 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+body {
+  background-color: #f5f5f5;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-top: 40px;
+}
+.container {
+  width: 100%;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container2 {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+.footer {
+  background-color: #f5f5f5;
+}
+.navbar {
+  background-color: #f5f5f5;
+}
+.nav-div-custom-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav-div-custom-right {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.nav-div-custom-right .nav-link {
+  color: #2e2e2e;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.info-pembelian {
+  margin-top: 110px;
+  width: 70%;
+}
+.info-pembelian .card {
+  background-color: transparent;
+  border-radius: unset;
+}
+.info-pembelian .card-header {
+  background-color: #2e2e2e;
+  border-radius: unset;
+  color: #ffffff;
+  padding: unset;
+  border: unset;
+}
+.info-pembelian .card-footer {
+  background-color: transparent;
+}
