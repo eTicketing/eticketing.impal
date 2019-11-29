@@ -8,8 +8,8 @@
         <?php $this->load->view("main/_partials/navbar.php") ?>
         <img src="<?php echo base_url('img/ticket2.png') ?>" class="img-fluid" width="100%" height="100%"><br><br><br>
         <div class="container2 mx-auto">
+        <?php foreach ($acara as $dataAcara): ?>
             <div class="card-group">
-                <?php foreach ($acara as $dataAcara): ?>
                 <div class="card">
                     <img src="<?php echo base_url('upload/acara/'.$dataAcara->gambar) ?>" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -25,8 +25,8 @@
                     <p class="card-text"><small class="text-muted">Tiket tersedia : <?php echo $dataAcara->jumlah ?></small></p>
                     </div>
                 </div>
-                <?php endforeach; ?>
             </div>
+        <?php endforeach; ?>
         </div>
         <?php $this->load->view("main/_partials/footer.php") ?>
         <?php $this->load->view("main/_partials/modal.php") ?>
