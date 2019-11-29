@@ -26,7 +26,8 @@
                         <tr>
                             <?php $i++?>
                             <td>
-                                <a href="<?php echo site_url('main/tiket/detail_tiket/'.$dataTiket->id_tiket) ?>" class="btn btn-small"><?php echo $i ?></a>
+                                <a href="<?php echo site_url('main/tiket/detail_tiket/'.$dataTiket->id_tiket) ?>">
+                                <button class="btn draw-border"><?php echo $i ?></button></a>
                             </td>
                             <td>
                                 <img src="<?php echo base_url('upload/tiket/qr_code/'.$dataTiket->qr_code) ?>" width="64" />
@@ -41,10 +42,9 @@
                                 <?php echo $dataTiket->status ?>
                             </td>
                             <td width="250">
-                                <a href="<?php echo site_url('main/tiket/edit/'.$dataTiket->id_acara) ?>"
-                                    class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                <a onclick="deleteConfirm('<?php echo site_url('main/tiket/delete/'.$dataTiket->id_tiket) ?>')"
-                                    href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                <a href="<?php echo site_url('main/tiket/edit/'.$dataTiket->id_acara) ?>">
+                                    <button class="btn draw-border2">Unggah Bukti Bayar</button>
+                                </a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

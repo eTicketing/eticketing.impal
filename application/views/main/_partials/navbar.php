@@ -17,10 +17,7 @@
                 </li>
             <?php elseif ($this->session->userdata('username')!=null) : ?>
                 <li class="nav-item">
-                    <button class="btn draw-border" onclick="window.location.href = '<?php echo site_url('main/main/registrasi') ?>'">Pesanan dan Tiket</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn draw-border" onclick="window.location.href = '<?php echo site_url('main/main/login') ?>'">Profil</button>
+                    <button class="btn draw-border" onclick="window.location.href = '<?php echo site_url('main/tiket/pesanan/'.$this->session->userdata('id')) ?>'">Pesanan dan Tiket</button>
                 </li>
                 <li class="nav-item">
                     <a href="#!" onclick="logoutConfirm('<?php echo site_url('main/main/logout') ?>')">
