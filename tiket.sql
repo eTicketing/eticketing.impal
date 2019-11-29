@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2019 at 09:46 PM
+-- Generation Time: Nov 29, 2019 at 03:48 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -25,33 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `acara`
---
-
-CREATE TABLE `acara` (
-  `id_acara` varchar(64) NOT NULL,
-  `id_admin` varchar(64) NOT NULL,
-  `nama_acara` varchar(255) NOT NULL,
-  `tempat` varchar(255) NOT NULL,
-  `tanggal` date NOT NULL,
-  `gambar` varchar(255) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `harga` int(10) NOT NULL,
-  `jumlah` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `acara`
---
-
-INSERT INTO `acara` (`id_acara`, `id_admin`, `nama_acara`, `tempat`, `tanggal`, `gambar`, `deskripsi`, `harga`, `jumlah`) VALUES
-('5de02b7e9830b', '5de02b638f85c', 'Muda Mendunia', 'Kab. Bandung', '2019-11-30', '5de02b7e9830b.jpg', 'asdf', 50000, 250),
-('5de02c05bca4a', '5de02b638f85c', 'Sampah Adalah Sahabat', 'Kab. Bandung', '2019-11-30', '5de02c05bca4a.jpg', 'asdf', 50000, 250),
-('5de02cf3c785d', '5de02ca2b5c14', 'Konser Iwan Mras', 'Kab. Bandung', '2019-12-28', '5de02cf3c785d.jpg', 'asdf', 50000, 250);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tiket`
 --
 
@@ -62,56 +35,50 @@ CREATE TABLE `tiket` (
   `qr_code` varchar(255) NOT NULL,
   `jumlah` int(5) NOT NULL,
   `total_harga` int(10) NOT NULL,
-  `status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id_user` varchar(64) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `nomor_kartu` int(64) NOT NULL,
-  `jenis_kelamin` varchar(10) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `no_hp` int(12) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `level` varchar(10) NOT NULL
+  `status` varchar(20) NOT NULL,
+  `bukti_bayar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `tiket`
 --
 
-INSERT INTO `user` (`id_user`, `nama`, `username`, `nomor_kartu`, `jenis_kelamin`, `email`, `no_hp`, `password`, `level`) VALUES
-('5de02b638f85c', 'Akbar Taufiqurrahman', 'akbartr', 1301174602, 'Laki-laki', 'aktama8998@gmail.com', 2147483647, '4ee152a4f11ce27a7fa842aaaff0adff', 'admin'),
-('5de02ca2b5c14', 'Azha Alvin', 'mmylite', 1301170000, 'Laki-laki', 'azha_alvin99@gmail.com', 2147483647, '0192023a7bbd73250516f069df18b500', 'admin');
+INSERT INTO `tiket` (`id_tiket`, `id_acara`, `id_customer`, `qr_code`, `jumlah`, `total_harga`, `status`, `bukti_bayar`) VALUES
+('5de07199ba844', '5de02b7e9830b', '', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de072bc7f712', '5de02b7e9830b', '5de054a707591', 'default.jpg', 250, 12500000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07578c3a06', '5de02b7e9830b', '5de054a707591', 'default.jpg', 250, 12500000, 'Belum Terverifikasi', 'default.jpg'),
+('5de0757fb790a', '5de02b7e9830b', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07587d69d6', '5de02b7e9830b', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07590b89cd', '5de02b7e9830b', '5de054a707591', 'default.jpg', 3, 150000, 'Belum Terverifikasi', 'default.jpg'),
+('5de075a400706', '5de02b7e9830b', '5de054a707591', 'default.jpg', 3, 150000, 'Belum Terverifikasi', 'default.jpg'),
+('5de075b48640d', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de075dcac6fb', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de076afc0c55', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de076debbf29', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de076f11b9d9', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de0771202a83', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de0771f9f26b', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de0774499bb4', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07776dd6f8', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de077f485909', '5de02c05bca4a', '5de02c05bca4a', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07872c0e52', '5de02c05bca4a', '5de054a707591', 'default.jpg', 2, 100000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07887cf703', '5de02c05bca4a', '5de054a707591', 'default.jpg', 34, 1700000, 'Belum Terverifikasi', 'default.jpg'),
+('5de078b1a72dd', '5de02cf3c785d', '5de054a707591', 'default.jpg', 23, 1150000, 'Belum Terverifikasi', 'default.jpg'),
+('5de0793a73a77', '5de02c05bca4a', '5de054a707591', 'default.jpg', 250, 12500000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07966456ae', '5de02c05bca4a', '5de054a707591', 'default.jpg', 45, 2250000, 'Belum Terverifikasi', 'default.jpg'),
+('5de0797d7edd7', '5de02b7e9830b', '5de054a707591', 'default.jpg', 123, 6150000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07a218b29f', '5de02b7e9830b', '5de054a707591', 'default.jpg', 234, 11700000, 'Belum Terverifikasi', 'default.jpg'),
+('5de07ad7d21db', '5de02b7e9830b', '5de054a707591', 'default.jpg', 456, 22800000, 'Belum Terverifikasi', 'default.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `acara`
---
-ALTER TABLE `acara`
-  ADD PRIMARY KEY (`id_acara`);
-
---
 -- Indexes for table `tiket`
 --
 ALTER TABLE `tiket`
   ADD PRIMARY KEY (`id_tiket`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
