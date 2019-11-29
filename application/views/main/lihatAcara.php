@@ -14,25 +14,21 @@
                     <img src="<?php echo base_url('upload/acara/'.$dataAcara->gambar) ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title"><?php echo $dataAcara->nama_acara ?></h5>
-                    <p class="card-text"><small class="text-muted"><?php echo $dataAcara->tanggal ?></small></p>
+                    <p class="card-text"><small class="text-muted">Tanggal : <?php echo $dataAcara->tanggal ?></small></p>
                     <p class="card-text"><?php echo $dataAcara->deskripsi ?></p>
                     <button class="learn-more">
                         <div class="circle">
                             <span class="icon arrow"></span>
                         </div>
-                        <p class="button-text">Detail Acara</p>
+                        <p class="button-text" onclick="window.location.href = '<?php echo site_url('main/tiket/add/'.$dataAcara->id_acara) ?>'">Detail Acara</p>
                     </button><br><br>
-                    <p class="card-text"><small class="text-muted"><?php echo $dataAcara->jumlah ?></small></p>
+                    <p class="card-text"><small class="text-muted">Tiket tersedia : <?php echo $dataAcara->jumlah ?></small></p>
                     </div>
                 </div>
                 <?php endforeach; ?>
             </div>
         </div>
-        <footer class="footer mt-auto py-3">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-        </div>
-        </footer>
+        <?php $this->load->view("main/_partials/footer.php") ?>
         <?php $this->load->view("main/_partials/modal.php") ?>
 
         <?php $this->load->view("admin/_partials/js.php") ?>

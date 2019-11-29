@@ -18,4 +18,14 @@
         $('#btn-logout').attr('href', url);
         $('#logoutModal').modal();
     }
+    function beliConfirm(url){
+        var val1 = document.getElementById("valSatu").value;
+        var val2 = document.getElementById("valDua").value;
+        var hasil = val1*val2;
+        $('#exampleModalLabelBeli').html("Yakin ingin membeli "+val1+" tiket?");
+        $('#hasilnya').html("Total Harga : "+hasil);
+        $('#hasilnyaaa').html("Total Harga : "+hasil);
+        $('#btn-beli').attr('href', url);
+        $('#beliModal').modal();
+    }
 </script>
